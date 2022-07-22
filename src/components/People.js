@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const People = ({ people, id }) => {
+const People = ({ people }) => {
     const { name, height, gender, birth_year, hair_color, skin_color, eye_color, mass } = people
     const [details, setDetails] = useState('hidden');
 
@@ -14,7 +14,7 @@ const People = ({ people, id }) => {
     }
 
     return (
-        <div className='py-14 bg-white shadow-md rounded-2xl'>
+        <div className='lg:py-14 py-12 bg-white shadow-md rounded-2xl'>
             <div className=' flex justify-around lg:flex-row items-center '>
                 <h1 className='font-semibold w-12 lg:text-base text-xs'>{name}</h1>
                 <h1 className='font-semibold lg:text-base text-xs'>Gender <br /> <span className='font-normal'>{gender}</span></h1>
@@ -22,7 +22,7 @@ const People = ({ people, id }) => {
                 <h1 className='font-semibold lg:text-base text-xs'>Height <br /> <span className='font-normal'>{height}</span></h1>
                 <button
                     onClick={showDetails}
-                    className='lg:text-base text-xs border-none text-white lg:px-4 px-2 lg:py-2 py-1 lg:rounded-3xl rounded-2xl bg-pink-700 font-normal lg:w-auto'>
+                    className='lg:text-base text-xs border-none text-white lg:px-4 px-2 lg:py-2 py-1 lg:rounded-3xl rounded-2xl bg-red-500 font-normal lg:w-auto'>
                     {details === 'hidden' ? 'View Details' : 'Hide Details'}
                 </button>
             </div>
