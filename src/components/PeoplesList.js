@@ -6,14 +6,14 @@ const PeoplesList = () => {
 
     return (
         <div>
-            <h1 className='text-5xl font-semibold text-center mb-12 pt-6'>Peoples List</h1>
+            <h1 className='text-5xl font-semibold text-center mb-12 pt-6'>List of People</h1>
 
-            <div className='max-w-7xl mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 px-6 pb-12'>
+            <div className='max-w-7xl mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:px-6 px-2 pb-12'>
                 {
-                    peoples[0]?.results?.map((people) => <People
-                        key={people.height}
+                    peoples[0]?.results?.map((people, index) => <People
+                        key={index}
                         people={people}
-                        id={people.height}
+                        id={index}
                     />)
                 }
             </div>
