@@ -3,6 +3,7 @@ import People from './People';
 import ReactPaginate from 'react-paginate';
 import { useState } from 'react';
 import { VscChevronLeft, VscChevronRight } from "react-icons/vsc";
+import Loading from './Loading';
 
 const PeoplesList = () => {
     const [peoples] = usePeoples();
@@ -19,6 +20,7 @@ const PeoplesList = () => {
             people={people}
         />
     )
+    console.log(displayPeoples)
 
     const pageCount = Math.ceil(allPeoples?.length / peoplesPerPage);
 
@@ -32,9 +34,8 @@ const PeoplesList = () => {
             <div className='lg:min-h-[600px] min-h-[500px] '>
                 <div className='max-w-7xl mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:px-6 px-2 pb-12 '>
                     {
-                        displayPeoples
+                        displayPeoples?.length === undefined ? <Loading /> : displayPeoples
                     }
-
                 </div>
             </div>
             <div className='flex justify-center pb-12'>
